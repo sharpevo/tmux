@@ -6,6 +6,7 @@ if [ -n "$1" ]
 then
     session_name=$1
 fi
+
 tmux has-session -t $session_name
 
 if [ $? != 0 ]
@@ -17,10 +18,6 @@ then
 
     tmux new-window -n DOC -t $session_name
     tmux split-window -h -t $session_name
-
-    # two window is enough for normally usage.
-    #tmux new-window -n SERVER -t $session_name
-    #tmux split-window -h -t $session_name
 
     tmux select-window -t $session_name:1
     tmux select-pane -t $session_name:1.1
