@@ -1,6 +1,6 @@
 #!/bin/bash
 
-session_name='develop'
+session_name='DEVELOP'
 
 if [ -n "$1" ]
 then
